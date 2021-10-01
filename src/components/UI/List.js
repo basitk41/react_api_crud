@@ -7,6 +7,7 @@ const List = ({ post }) => {
         className="list-group-item list-group-item-action"
         to={`/post/${post.id}`}
       >
+        {`${post.id})  `}
         {post.title}
       </Link>
     </div>
