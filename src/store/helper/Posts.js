@@ -13,5 +13,6 @@ export const mapDispatchToProps = (dispatch) => {
     initPosts: () => dispatch(Actions.initSearch()),
     setPost: (id) => dispatch(Actions.set_Post(id)),
     addPost: (post, history) => dispatch(Actions.add_Post(post, history)),
+    deletePost: (id) => dispatch(Actions.delete_Post(id)),
   };
 };
