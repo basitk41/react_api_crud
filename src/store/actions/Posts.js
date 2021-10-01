@@ -38,7 +38,7 @@ export const deletePost = (id) => {
 };
 export const loading = (bool) => {
   return {
-    type: Constants.DELETEPOST,
+    type: Constants.LOADING,
     bool,
   };
 };
