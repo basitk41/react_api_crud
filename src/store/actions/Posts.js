@@ -117,3 +117,25 @@ export const delete_Post = (id) => {
       });
   };
 };
+export const update_Post = (post) => {
+  return (dispatch) => {
+    dispatch(loading(true));
+    axios
+      .put(`https://jsonplaceholder.typicode.com/posts/${post.id}`, post, {
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+      .then((response) => {
+        dispatch(updatePost(response.data));
+        dispatch(loading(false));
+        success("Post updated.");
+      })
+      .catch((err) => {
+        console.log("Something went wrong!");
+        console.log(err);
+        dispatch(loading(false));
+        error("Error while updating post.");
+      });
+  };
+};
