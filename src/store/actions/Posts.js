@@ -59,3 +59,19 @@ export const initSearch = () => {
       });
   };
 };
+export const set_Post = (id) => {
+  return (dispatch) => {
+    dispatch(loading(true));
+    axios
+      .get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+      .then((response) => {
+        dispatch(setPost(response.data));
+        dispatch(loading(false));
+      })
+      .catch((error) => {
+        console.log("Something went wrong!");
+        console.log(error);
+        dispatch(loading(false));
+      });
+  };
+};
