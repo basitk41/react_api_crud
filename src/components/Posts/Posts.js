@@ -1,12 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { mapDispatchToProps, mapStateToProps } from "../../store/helper/Posts";
 import List from "../UI/List";
 import Spinner from "../UI/Spinner";
-const Posts = ({ initPosts, posts, loading }) => {
-  useEffect(() => {
-    initPosts();
-  }, [initPosts]);
+const Posts = ({ posts, loading }) => {
   return (
     <div>
       {loading ? (
