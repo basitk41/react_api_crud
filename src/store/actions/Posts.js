@@ -49,7 +49,7 @@ export const initSearch = () => {
     axios
       .get(`https://jsonplaceholder.typicode.com/posts`)
       .then((response) => {
-        console.log(response);
+        dispatch(setPosts(response.data));
         dispatch(loading(false));
       })
       .catch((error) => {
