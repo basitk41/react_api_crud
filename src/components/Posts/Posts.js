@@ -8,7 +8,6 @@ const Posts = ({ initPosts, posts }) => {
   }, [initPosts]);
   return (
     <div>
-      <h1 style={{ textAlign: "center" }}>Posts</h1>
       {posts.map((post) => (
         <List key={post.id} post={post} />
       ))}
