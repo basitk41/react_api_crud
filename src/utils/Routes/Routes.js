@@ -9,6 +9,7 @@ const Routes = () => {
   return (
     <>
       <Header />
+      <hr></hr>
       <Switch>
         <Route exact path="/posts" component={Posts} />
         <Route exact path="/post/add" component={NewPost} />
