@@ -1,7 +1,9 @@
+import Routes from "./utils/Routes/Routes";
+
 const App = () => {
   return (
-    <div className="container">
-      <h1>Working here</h1>
+    <div className="container mt-3">
+      <Routes />
     </div>
   );
 };
