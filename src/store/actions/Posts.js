@@ -103,7 +103,7 @@ export const delete_Post = (id) => {
   return (dispatch) => {
     dispatch(loading(true));
     axios
-      .post(`https://jsonplaceholder.typicode.com/posts/${id}`)
+      .delete(`https://jsonplaceholder.typicode.com/posts/${id}`)
       .then((response) => {
         dispatch(deletePost(id));
         dispatch(loading(false));
