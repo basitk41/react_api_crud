@@ -117,7 +117,7 @@ export const delete_Post = (id) => {
       });
   };
 };
-export const update_Post = (post) => {
+export const update_Post = (post, history) => {
   return (dispatch) => {
     dispatch(loading(true));
     axios
@@ -130,6 +130,7 @@ export const update_Post = (post) => {
         dispatch(updatePost(response.data));
         dispatch(loading(false));
         success("Post updated.");
+        history.push(`/post/${post.id}`);
       })
       .catch((err) => {
         console.log("Something went wrong!");
