@@ -14,6 +14,6 @@ export const mapDispatchToProps = (dispatch) => {
     setPost: (id) => dispatch(Actions.set_Post(id)),
     addPost: (post, history) => dispatch(Actions.add_Post(post, history)),
     deletePost: (id) => dispatch(Actions.delete_Post(id)),
-    updatePost: (post) => dispatch(Actions.update_Post(post)),
+    updatePost: (post, history) => dispatch(Actions.update_Post(post, history)),
   };
 };
