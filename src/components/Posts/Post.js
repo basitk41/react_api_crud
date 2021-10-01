@@ -3,7 +3,8 @@ import { useParams, useHistory } from "react-router-dom";
 import Card from "../UI/Card";
 import { connect } from "react-redux";
 import { mapDispatchToProps, mapStateToProps } from "../../store/helper/Posts";
-const Post = ({ setPost, post }) => {
+import Spinner from "../UI/Spinner";
+const Post = ({ setPost, post, loading }) => {
   const { id } = useParams();
   const history = useHistory();
   useEffect(() => {
@@ -16,7 +17,7 @@ const Post = ({ setPost, post }) => {
           Back
         </button>
       </p>
-      <Card post={post} />
+      {loading ? <Spinner /> : <Card post={post} />}
     </div>
   );
 };

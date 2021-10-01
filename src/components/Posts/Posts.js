@@ -2,15 +2,18 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { mapDispatchToProps, mapStateToProps } from "../../store/helper/Posts";
 import List from "../UI/List";
-const Posts = ({ initPosts, posts }) => {
+import Spinner from "../UI/Spinner";
+const Posts = ({ initPosts, posts, loading }) => {
   useEffect(() => {
     initPosts();
   }, [initPosts]);
   return (
     <div>
-      {posts.map((post) => (
-        <List key={post.id} post={post} />
-      ))}
+      {loading ? (
+        <Spinner />
+      ) : (
+        posts.map((post) => <List key={post.id} post={post} />)
+      )}
     </div>
   );
 };
