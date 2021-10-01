@@ -10,10 +10,10 @@ const Routes = () => {
     <>
       <Header />
       <Switch>
-        <Route path="/posts" component={Posts} />
-        <Route path="/post/:id" component={Post} />
-        <Route path="/post/update/:id" component={UpdatePost} />
-        <Route path="/post/add" component={NewPost} />
+        <Route exact path="/posts" component={Posts} />
+        <Route exact path="/post/add" component={NewPost} />
+        <Route exact path="/post/:id" component={Post} />
+        <Route exact path="/post/update/:id" component={UpdatePost} />
         <Redirect from="/" to="/posts" />
       </Switch>
     </>
