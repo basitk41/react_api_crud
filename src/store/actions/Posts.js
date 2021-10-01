@@ -1,5 +1,6 @@
 import axios from "axios";
 import * as Constants from "../constants/Posts";
+import { error, success } from "../../utils/Toast/Toast";
 export const setPosts = (posts) => {
   return {
     type: Constants.SETPOSTS,
@@ -72,6 +73,29 @@ export const set_Post = (id) => {
         console.log("Something went wrong!");
         console.log(error);
         dispatch(loading(false));
+      });
+  };
+};
+export const add_Post = (post, history) => {
+  return (dispatch) => {
+    dispatch(loading(true));
+    axios
+      .post(`https://jsonplaceholder.typicode.com/posts`, post, {
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+      .then((response) => {
+        dispatch(addPost(response.data));
+        dispatch(loading(false));
+        history.push("/posts");
+        success("Post added.");
+      })
+      .catch((err) => {
+        console.log("Something went wrong!");
+        console.log(err);
+        dispatch(loading(false));
+        error("Error while adding post.");
       });
   };
 };
