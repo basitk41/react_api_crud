@@ -6,6 +6,12 @@ export const setPosts = (posts) => {
     posts,
   };
 };
+export const setPost = (post) => {
+  return {
+    type: Constants.SETPOST,
+    post,
+  };
+};
 export const updatePost = (post) => {
   return {
     type: Constants.UPDATEPOST,
