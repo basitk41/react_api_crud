@@ -13,6 +13,12 @@ const Post = ({ setPost, post, loading }) => {
   return (
     <div>
       <p style={{ textAlign: "right" }}>
+        <button
+          className="btn btn-primary"
+          onClick={() => history.push(`/post/update/${id}`)}
+        >
+          Update
+        </button>{" "}
         <button className="btn btn-info" onClick={() => history.goBack()}>
           Back
         </button>
