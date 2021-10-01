@@ -1,32 +1,32 @@
 import axios from "axios";
-import * as Actions from "../constants/Posts";
+import * as Constants from "../constants/Posts";
 export const setPosts = (posts) => {
   return {
-    type: Actions.SETPOSTS,
+    type: Constants.SETPOSTS,
     posts,
   };
 };
 export const updatePost = (post) => {
   return {
-    type: Actions.UPDATEPOST,
+    type: Constants.UPDATEPOST,
     post,
   };
 };
 export const addPost = (post) => {
   return {
-    type: Actions.ADDPOST,
+    type: Constants.ADDPOST,
     post,
   };
 };
 export const deletePost = (id) => {
   return {
-    type: Actions.DELETEPOST,
+    type: Constants.DELETEPOST,
     id,
   };
 };
 export const loading = (bool) => {
   return {
-    type: Actions.DELETEPOST,
+    type: Constants.DELETEPOST,
     bool,
   };
 };
