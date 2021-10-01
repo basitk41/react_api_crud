@@ -11,5 +11,6 @@ export const mapStateToProps = (state) => {
 export const mapDispatchToProps = (dispatch) => {
   return {
     initPosts: () => dispatch(Actions.initSearch()),
+    setPost: (id) => dispatch(Actions.set_Post(id)),
   };
 };
