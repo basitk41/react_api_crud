@@ -99,3 +99,21 @@ export const add_Post = (post, history) => {
       });
   };
 };
+export const delete_Post = (id) => {
+  return (dispatch) => {
+    dispatch(loading(true));
+    axios
+      .post(`https://jsonplaceholder.typicode.com/posts/${id}`)
+      .then((response) => {
+        dispatch(deletePost(id));
+        dispatch(loading(false));
+        success("Post deleted.");
+      })
+      .catch((err) => {
+        console.log("Something went wrong!");
+        console.log(err);
+        dispatch(loading(false));
+        error("Error while deleting post.");
+      });
+  };
+};
